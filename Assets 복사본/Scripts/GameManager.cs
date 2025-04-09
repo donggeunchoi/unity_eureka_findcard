@@ -27,6 +27,10 @@ public class GameManager : MonoBehaviour
     public AudioClip LB;
     public AudioSource audioSource;
 
+    private bool isEBPlayed = false;
+
+
+    private AudioManager audioManager;
 
     public void Awake()
     {
@@ -34,6 +38,8 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
+
+        
     }
 
 
@@ -42,7 +48,9 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         audioSource = GetComponent<AudioSource>();
-        
+
+        audioManager = AudioManager.Instance;
+
     }
 
     // Update is called once per frame
@@ -52,14 +60,18 @@ public class GameManager : MonoBehaviour
         {
             time -= Time.deltaTime;
 
-            if(time <= 10.0f)
-            {
-                audioSource.PlayOneShot(EB);
-            }
-
         }
+
         else
         {
+
+            if(isEBPlayed)
+            {
+                audioSource.Stop();
+                isEBPlayed = false;
+            }
+
+
             audioSource.PlayOneShot(LB);
 
             time = 40f;
@@ -68,6 +80,25 @@ public class GameManager : MonoBehaviour
         }
         
         timeTxt.text = time.ToString("n2");
+
+        if (time <= 10.0f && !isEBPlayed)
+        {
+
+            //audioManager.StopAudio();
+            // EB 소리가 아직 재생되지 않았다면 재생
+            audioSource.PlayOneShot(EB);
+            isEBPlayed = true;
+
+           
+         }
+
+        if (time == 0.0f && isEBPlayed)
+        {
+            isEBPlayed = false;
+           
+        }
+
+
     }
 
     public void matched()

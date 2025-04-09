@@ -9,6 +9,9 @@ public class AudioManager : MonoBehaviour
     public AudioSource audiosource;
     public AudioClip clip;
 
+   
+
+    
 
     public void Awake()
     {
@@ -16,6 +19,7 @@ public class AudioManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
         }
         else
         {
@@ -35,6 +39,14 @@ public class AudioManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
+
+    public void StopAudio()
+    {
+        audiosource.Stop();
+    }
+
+
+    
 }

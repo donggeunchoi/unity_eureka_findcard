@@ -580,8 +580,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 996782484}
-        m_TargetAssemblyTypeName: Retrybutton, Assembly-CSharp
-        m_MethodName: retry
+        m_TargetAssemblyTypeName: stagebutton, Assembly-CSharp
+        m_MethodName: stage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -616,7 +616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 0.9411765, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -650,7 +650,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 996782478}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d91acff54216c46ebac898b9ac1e6e0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d02dbc0cd02247088224ffe3031a537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1640597287
@@ -701,7 +701,7 @@ Animator:
   m_GameObject: {fileID: 1640597287}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9cbbfa12ba8a34fdca6c5169c053147e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3be8c246bcf1b4cafac74d69967fe787, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
