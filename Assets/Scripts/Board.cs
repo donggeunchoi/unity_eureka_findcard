@@ -10,6 +10,9 @@ public class Board : MonoBehaviour
     public Transform cards;
     public GameObject card;
 
+    public float spreadTime = 0.5f; //카드가 퍼지는 시간
+    public Vector2 startPosition = new Vector2(0, 0); // 시작 위치
+
     // Start is called before the first frame update
     void Start()
     {
