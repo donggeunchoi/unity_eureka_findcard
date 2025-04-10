@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     public AudioClip LB;
     public AudioSource audioSource;
 
-    private bool isEBPlayed = false;
+    private bool isEBPlayed = false;// 긴급한 소리를 불값 false를 사용해서 유무파악 변수 생성.
 
 
     private AudioManager audioManager;
@@ -47,9 +47,12 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1.0f;
-        audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();// 오디오 소스에 오디오 소스를 불러온다.
 
-        audioManager = AudioManager.Instance;
+        audioManager = AudioManager.Instance; // 오디오 매니저를 참조로 불러온다.
+
+        //오디오 매니저에 있는 BgPlay를 들고오면 게임 재시작 하더라도 소리가 계속 나올 수 있다.
+        audioManager.BgPlay();
 
     }
 
@@ -58,7 +61,7 @@ public class GameManager : MonoBehaviour
     {
         if(time > 0.0f)
         {
-            time -= Time.deltaTime;
+            time -= Time.deltaTime;// 시간은 감소한다.
 
         }
 
